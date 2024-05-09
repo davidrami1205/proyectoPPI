@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Automoviles Itagui</title>
+	<link rel="stylesheet" th:href="@{/css/estiloLogin.css}">
+	
+</head>
+
+
+<body>
+
+	<div class="logo">
+
+		<img class="logoEmpresa" th:src="@{/Imagenes/logoEmpresa.jpeg}">
+
+	</div>
+	
+	<div class="loginRegistrer">
+		<p>¿No tienes una cuenta?</p>
+		
+		<a th:href="@{/registrar}"><button type="submit" class="btnRegistrar" >Registrar</button></a>
+	</div>
+	
+	<div class="loginF">
+		
+		<form method="post" th:action="@{/api/comprobar/{correo}/{contrasena}}" > 
+		
+			<div clase="titleForm">
+				<h4>Iniciar Sesión</h4>				
+			</div>
+		
+			<div class="inputBox">
+				<img th:src="@{/Imagenes/correoLogo.png}">
+				<input type="email" name="correo" required>
+				<label>Correo</label>	
+			</div>
+			
+			<div class="inputBox">
+				<img th:src="@{/Imagenes/contraseñaLogo.png}">
+				<input type="password" name= "contrasena" required>
+				<label>Contraseña</label>	
+			</div>
+			
+			<div class="recordarContraseña">
+				<a href="#">¿Olvidaste tu contraseña?</a>
+			</div>
+			
+			<button type="submit" class="btn" >Ingresar</button>
+			
+		</form>
+	</div>
+
+</body>
+
+
+</html>

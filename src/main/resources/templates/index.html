@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Automoviles Itagui</title>
+	<link rel="stylesheet" th:href="@{/css/estiloIndex.css}">
+</head>
+
+<body id="body">
+	
+	<header>		
+		<div class="iconMenu">
+			<img class="menuLogo" id="btnOpen" th:src="@{/Imagenes/menuLogo.png}">
+		</div>
+	</header>
+	
+	<div class="imagenEmpresa">
+	
+		<img class="logoEmpresa" th:src="@{/Imagenes/logoEmpresa.jpeg}">
+	
+	</div>
+	
+	
+	<div class="optionsMenu" id="optionsMenu">
+		
+
+		<a th:href="@{/}">
+			<div class="option" id="selected">
+				<img class="programarLogo" th:src="@{/Imagenes/programarLogo.png}" title="Programar">
+				<h4>Programar</h4>
+			</div>
+		</a>
+		
+		<a th:href="@{/}">
+			<div class="option">
+				<img class="novedadLogo" th:src="@{/Imagenes/novedadLogo.png}" title="Novedades">
+				<h4>Novedades</h4>
+			</div>
+		</a>
+		
+		<a th:href="@{/}">
+			<div class="option">
+				<img class="adminLogo" th:src="@{/Imagenes/adminLogo.png}" title="Administrar">
+				<h4>Administración</h4>
+			</div>
+		</a>
+		
+		<a th:href="@{/}">
+			<div class="informe">
+				<img class="informeLogo" th:src="@{/Imagenes/informeLogo.png}" title="Informes">
+				<h4>Informes</h4>
+			</div>
+		</a>
+			
+		<a th:href="@{/}">
+			<div class="user">
+				<img class="userLogo" th:src="@{/Imagenes/sesionLogo.png}" title="Perfil">
+				<h4>Perfil</h4>
+			</div>
+		</a>	
+			
+	</div>
+	
+	<div>
+		<table>
+			<thead>
+				<tr>
+				<th scope="col">Codigo</th>
+				<th scope="col">Vehiculo</th>
+				<th scope="col">Ruta</th>
+				<th scope="col">Conductor</th>
+				<th scope="col">Hora Inicio</th>
+				<th scope="col">Hora Salida</th>
+				<th scope="col">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th>1</th>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+			</tbody>
+		</table>
+	
+	</div>
+	
+	<script th:src="@{/js/scriptIndex.js}"></script>
+</body>
+
+</html>

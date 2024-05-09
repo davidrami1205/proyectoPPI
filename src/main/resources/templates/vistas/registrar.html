@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registrarse</title>
+    <link rel="stylesheet" th:href="@{/css/estiloRegistro.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Incluye la biblioteca de Font Awesome -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img class="logoEmpresa" th:src="@{/Imagenes/logoEmpresa.jpeg}">
+        </div>
+        <div class="register-form">
+            <h2>Registrarse</h2>
+            <form method="post" th:action="@{/api/users}">
+                <div class="input-field">
+                    <i class="fas fa-user"></i><input type="text" name="primerNombre" placeholder="Primer Nombre" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="segundoNombre" placeholder="Segundo Nombre">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="primerApellido" placeholder="Primer Apellido" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="segundoApellido" placeholder="Segundo Apellido">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-id-card"></i>
+                    <input type="text" name="tipoDocumento" placeholder="Tipo de Documento" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-id-card"></i>
+                    <input type="text" name="numeroDocumento" placeholder="Número de Documento" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="correo" placeholder="Correo" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="contraseña" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class="btn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
