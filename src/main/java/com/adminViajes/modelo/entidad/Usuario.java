@@ -1,29 +1,48 @@
 package com.adminViajes.modelo.entidad;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-
 @Entity
-@Table(name="usuario")
+@Table(name = "usuario")
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idUsuario")
 	private int idUsuario;
+	@Column(name = "primerNombre")
 	private String primerNombre;
+	@Column(name = "segundoNombre")
 	private String segundoNombre;
+	@Column(name = "primerApellido")
 	private String primerApellido;
+	@Column(name = "segundoApellido")
 	private String segundoApellido;
+	@Column(name = "tipoDocumento")
 	private String tipoDocumento;
+	@Column(name = "numeroDocumento")
 	private int numeroDocumento;
+	@Column(name = "correo")
 	private String correo;
+	@Column(name = "contrasena")
 	private String contrasena;
+	@Column(name = "rol")
 	private String rol;
-	
+	@Column(name = "estado")
+	private String estado;
+	@OneToMany(mappedBy = "usuario", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
+	private List<Viaje> listaViajes;
+
 	public Usuario() {
 		super();
 	}
@@ -96,7 +115,7 @@ public class Usuario {
 		return contrasena;
 	}
 
-	public void setContraseña(String contrasena) {
+	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
 
@@ -107,5 +126,21 @@ public class Usuario {
 	public void setRol(String rol) {
 		this.rol = rol;
 	}
-	
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public List<Viaje> getListaViajes() {
+		return listaViajes;
+	}
+
+	public void setListaViajes(List<Viaje> listaViajes) {
+		this.listaViajes = listaViajes;
+	}
+
 }

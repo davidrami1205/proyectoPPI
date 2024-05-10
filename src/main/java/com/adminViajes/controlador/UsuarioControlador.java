@@ -6,12 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.adminViajes.modelo.entidad.Usuario;
 import com.adminViajes.modelo.servicio.IUsuarioService;
 
 @Controller
+@SessionAttributes("usuario")
 public class UsuarioControlador {
 
 	@Autowired
@@ -30,7 +32,7 @@ public class UsuarioControlador {
 		return "redirect:/login";
 	}
 
-	@PostMapping("/api/comprobar/{correo}/{contrasena}")
+	@PostMapping("/api/comprobar/")
 	public String comprobarLogin(@RequestParam("correo") String correo, @RequestParam("contrasena") String contrasena,
 			Model modelo) {
 
@@ -50,6 +52,8 @@ public class UsuarioControlador {
 		}
 
 		System.out.println("Inicio de sesión exitoso");
+
 		return "redirect:/";
 	}
+
 }

@@ -9,19 +9,20 @@ import com.adminViajes.modelo.entidad.Usuario;
 import com.adminViajes.modelo.repositorio.UsuarioRepositorio;
 
 @Service
-public class UsuarioServicio implements IUsuarioService{
-	
+public class UsuarioServicio implements IUsuarioService {
+
 	@Autowired
 	private UsuarioRepositorio usuariorepositorio;
 
 	@Override
 	public List<Usuario> findAll() {
-		return (List<Usuario>)usuariorepositorio.findAll();
+		return (List<Usuario>) usuariorepositorio.findAll();
 	}
 
 	@Override
 	public void save(Usuario usuario) {
 		usuario.setRol("USER");
+		usuario.setEstado("ACTIVO");
 		usuariorepositorio.save(usuario);
 	}
 
