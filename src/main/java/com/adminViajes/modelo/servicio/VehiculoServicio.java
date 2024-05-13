@@ -9,15 +9,15 @@ import com.adminViajes.modelo.entidad.Vehiculos;
 import com.adminViajes.modelo.repositorio.VehiculoRepositorio;
 
 @Service
-public class VehiculoServicio implements IVehiculoServicio{
-	
+public class VehiculoServicio implements IVehiculoServicio {
+
 	@Autowired
-	
+
 	private VehiculoRepositorio vehiculoRepositorio;
-	
+
 	@Override
 	public List<Vehiculos> listaTodos() {
-		return (List<Vehiculos>)vehiculoRepositorio.findAll();
+		return (List<Vehiculos>) vehiculoRepositorio.findAll();
 	}
 
 	@Override
@@ -26,12 +26,12 @@ public class VehiculoServicio implements IVehiculoServicio{
 	}
 
 	@Override
-	public Vehiculos buscarPorId(Integer id) {
+	public Vehiculos buscarPorId(Long id) {
 		return vehiculoRepositorio.findById(id).orElse(null);
 	}
 
 	@Override
-	public void eliminar(Integer id) {
+	public void eliminar(Long id) {
 		vehiculoRepositorio.deleteById(id);
 	}
 

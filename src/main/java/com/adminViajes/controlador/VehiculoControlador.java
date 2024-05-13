@@ -1,6 +1,5 @@
 package com.adminViajes.controlador;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +13,16 @@ import com.adminViajes.modelo.servicio.IVehiculoServicio;
 
 @Controller
 @RequestMapping("/vistas/vehiculos")
-public class Controlador {
-	
+public class VehiculoControlador {
+
 	@Autowired
 	private IVehiculoServicio vehiculoServicio;
-	
+
 	@GetMapping("/listar")
 	public String listadoVehiculos(Model modelo) {
-		List<Vehiculos> listadoVehiculos=vehiculoServicio.listaTodos();
-		modelo.addAttribute("vehiculos",listadoVehiculos);
+		List<Vehiculos> listadoVehiculos = vehiculoServicio.listaTodos();
+		modelo.addAttribute("vehiculos", listadoVehiculos);
 		return "/vistas/vehiculos/listarVehiculos";
 	}
-	
+
 }

@@ -30,7 +30,7 @@ public class Usuario {
 	@Column(name = "tipoDocumento")
 	private String tipoDocumento;
 	@Column(name = "numeroDocumento")
-	private int numeroDocumento;
+	private Long numeroDocumento;
 	@Column(name = "correo")
 	private String correo;
 	@Column(name = "contrasena")
@@ -95,11 +95,11 @@ public class Usuario {
 		this.tipoDocumento = tipoDocumento;
 	}
 
-	public int getNumeroDocumento() {
+	public Long getNumeroDocumento() {
 		return numeroDocumento;
 	}
 
-	public void setNumeroDocumento(int numeroDocumento) {
+	public void setNumeroDocumento(Long numeroDocumento) {
 		this.numeroDocumento = numeroDocumento;
 	}
 

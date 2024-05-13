@@ -6,7 +6,10 @@ import com.adminViajes.modelo.entidad.Vehiculos;
 
 public interface IVehiculoServicio {
 	public List<Vehiculos> listaTodos();
+
 	public void guardar(Vehiculos vehiculos);
-	public Vehiculos buscarPorId(Integer id);
-	public void eliminar(Integer id);
+
+	public Vehiculos buscarPorId(Long id);
+
+	public void eliminar(Long id);
 }

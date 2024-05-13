@@ -15,7 +15,7 @@ public class Ruta {
 
 	@Id
 	@Column(name = "idRuta")
-	private int idRuta;
+	private Long idRuta;
 	@Column(name = "codigoRuta")
 	private String codigoRuta;
 	@Column(name = "nombreRuta")
@@ -28,11 +28,11 @@ public class Ruta {
 		super();
 	}
 
-	public int getIdRuta() {
+	public Long getIdRuta() {
 		return idRuta;
 	}
 
-	public void setIdRuta(int idRuta) {
+	public void setIdRuta(Long idRuta) {
 		this.idRuta = idRuta;
 	}
 

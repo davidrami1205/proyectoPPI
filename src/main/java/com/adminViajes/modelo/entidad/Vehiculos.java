@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class Vehiculos {
 	@Id
 	@Column(name = "idVehiculo")
-	private int IdVehiculo;
+	private Long IdVehiculo;
 	@Column(name = "placa")
 	private String placa;
 	@Column(name = "numeroInterno")
@@ -27,11 +27,11 @@ public class Vehiculos {
 		super();
 	}
 
-	public int getIdVehiculo() {
+	public Long getIdVehiculo() {
 		return IdVehiculo;
 	}
 
-	public void setIdVehiculo(int idVehiculo) {
+	public void setIdVehiculo(Long idVehiculo) {
 		IdVehiculo = idVehiculo;
 	}
 

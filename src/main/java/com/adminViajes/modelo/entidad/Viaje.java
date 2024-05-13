@@ -16,7 +16,7 @@ public class Viaje {
 
 	@Id
 	@Column(name = "idViaje")
-	private int idViaje;
+	private Long idViaje;
 	@Column(name = "horaInicio")
 	private LocalDateTime horaInicio;
 	@Column(name = "horaFin")
@@ -44,11 +44,11 @@ public class Viaje {
 		super();
 	}
 
-	public int getIdViaje() {
+	public Long getIdViaje() {
 		return idViaje;
 	}
 
-	public void setIdViaje(int idViaje) {
+	public void setIdViaje(Long idViaje) {
 		this.idViaje = idViaje;
 	}
 

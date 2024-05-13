@@ -61,31 +61,38 @@
 		</a>	
 			
 	</div>
-	
-	<div>
+
+	<div class="listViajes">
 		<table>
 			<thead>
-				<tr>
-				<th scope="col">Codigo</th>
-				<th scope="col">Vehiculo</th>
+		  	<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Vehículo</th>
 				<th scope="col">Ruta</th>
-				<th scope="col">Conductor</th>
+				<th scope="col">Primer Nombre</th>
+				<th scope="col">Primer Apellido</th>
 				<th scope="col">Hora Inicio</th>
-				<th scope="col">Hora Salida</th>
+				<th scope="col">Hora Fin</th>
 				<th scope="col">Acciones</th>
-				</tr>
+		  	</tr>
 			</thead>
 			<tbody>
-				<th>1</th>
-				<td>2</td>
-				<td>3</td>
-				<td>4</td>
-				<td>5</td>
-				<td>6</td>
-				<td>7</td>
+		  		<tr th:each="viaj:${Viaje}">
+					<th scope="row" th:text="${viaj.idViaje}"></th>
+					<td th:text="${viaj.vehiculos.NumeroInterno}"></td>
+					<td th:text="${viaj.ruta.nombreRuta}"></td>
+					<td th:text="${viaj.conductor.primerNombre}"></td>
+					<td th:text="${viaj.conductor.primerApellido}"></td>
+					<td th:text="${viaj.HoraInicio}"></td>
+					<td th:text="${viaj.HoraFin}"></td>
+					<td>
+						<button>Completar</button>
+						<button>Editar</button>
+						<button>Eliminar</button>
+					</td>
+		  		</tr>
 			</tbody>
-		</table>
-	
+	  	</table>
 	</div>
 	
 	<script th:src="@{/js/scriptIndex.js}"></script>

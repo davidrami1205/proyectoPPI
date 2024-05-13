@@ -162,3 +162,16 @@ a.selected {
 .optionsMenu_move {
 	width: 200px;
 }
+
+table {
+	border-collapse: collapse; 
+	width: 94%; 
+	position: absolute;
+	top: 47%;
+  }
+  
+  table th, table td {
+	border: 1px solid #000000; /* Agregar un borde a las celdas de la tabla */
+	padding: 10px; /* Agregar algo de relleno para una mejor legibilidad */
+	text-align: center;
+  }

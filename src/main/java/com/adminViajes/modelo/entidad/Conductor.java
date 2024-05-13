@@ -15,7 +15,7 @@ public class Conductor {
 
 	@Id
 	@Column(name = "idConductor")
-	private int idConductor;
+	private Long idConductor;
 	@Column(name = "primerNombre")
 	private String primerNombre;
 	@Column(name = "segundoNombre")
@@ -27,7 +27,7 @@ public class Conductor {
 	@Column(name = "tipoDocumento")
 	private String tipoDocumento;
 	@Column(name = "numeroDocumento")
-	private int numeroDocumento;
+	private Long numeroDocumento;
 	@OneToMany(mappedBy = "conductor", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
 			CascadeType.DETACH, CascadeType.REFRESH })
 	private List<Viaje> listaViajes;
@@ -36,11 +36,11 @@ public class Conductor {
 		super();
 	}
 
-	public int getIdConductor() {
+	public Long getIdConductor() {
 		return idConductor;
 	}
 
-	public void setIdConductor(int idConductor) {
+	public void setIdConductor(Long idConductor) {
 		this.idConductor = idConductor;
 	}
 
@@ -84,11 +84,11 @@ public class Conductor {
 		this.tipoDocumento = tipoDocumento;
 	}
 
-	public int getNumeroDocumento() {
+	public Long getNumeroDocumento() {
 		return numeroDocumento;
 	}
 
-	public void setNumeroDocumento(int numeroDocumento) {
+	public void setNumeroDocumento(Long numeroDocumento) {
 		this.numeroDocumento = numeroDocumento;
 	}
 

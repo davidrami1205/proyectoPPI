@@ -27,11 +27,6 @@ public class UsuarioServicio implements IUsuarioService {
 	}
 
 	@Override
-	public void eliminar(Integer id) {
-		usuariorepositorio.deleteById(id);
-	}
-
-	@Override
 	public Usuario buscarCorreo(String correo) {
 		return usuariorepositorio.findByCorreo(correo);
 	}
@@ -39,6 +34,11 @@ public class UsuarioServicio implements IUsuarioService {
 	@Override
 	public Usuario buscarContrasena(String contrasena) {
 		return usuariorepositorio.findByContrasena(contrasena);
+	}
+
+	@Override
+	public void eliminar(Integer id) {
+		usuariorepositorio.deleteById(id);
 	}
 
 }
