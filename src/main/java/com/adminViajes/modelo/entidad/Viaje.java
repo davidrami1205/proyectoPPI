@@ -1,7 +1,6 @@
 package com.adminViajes.modelo.entidad;
 
 import java.sql.Time;
-import java.time.LocalDateTime;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import net.sf.jsqlparser.expression.DateTimeLiteralExpression.DateTime;
 
 @Entity
 @Table(name = "viaje")
@@ -18,9 +18,9 @@ public class Viaje {
 	@Column(name = "idViaje")
 	private Long idViaje;
 	@Column(name = "horaInicio")
-	private LocalDateTime horaInicio;
+	private DateTime horaInicio;
 	@Column(name = "horaFin")
-	private LocalDateTime horaFin;
+	private DateTime horaFin;
 	@Column(name = "duracion")
 	private Time duracion;
 	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
@@ -52,19 +52,19 @@ public class Viaje {
 		this.idViaje = idViaje;
 	}
 
-	public LocalDateTime getHoraInicio() {
+	public DateTime getHoraInicio() {
 		return horaInicio;
 	}
 
-	public void setHoraInicio(LocalDateTime horaInicio) {
+	public void setHoraInicio(DateTime horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 
-	public LocalDateTime getHoraFin() {
+	public DateTime getHoraFin() {
 		return horaFin;
 	}
 
-	public void setHoraFin(LocalDateTime horaFin) {
+	public void setHoraFin(DateTime horaFin) {
 		this.horaFin = horaFin;
 	}
 

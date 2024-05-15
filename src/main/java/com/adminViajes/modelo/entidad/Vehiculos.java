@@ -23,7 +23,7 @@ public class Vehiculos {
 			CascadeType.DETACH, CascadeType.REFRESH })
 	private List<Viaje> listaViajes;
 
-	private Vehiculos() {
+	public Vehiculos() {
 		super();
 	}
 

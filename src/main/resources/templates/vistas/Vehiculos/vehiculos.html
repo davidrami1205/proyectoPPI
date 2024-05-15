@@ -4,12 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Automoviles Itagui</title>
-	<link rel="stylesheet" th:href="@{/css/estiloIndex.css}">
+   	<link rel="stylesheet" th:href="@{/css/estiloVehiculos.css}">
+	
 </head>
 
-<body id="body">
-	
-	<header>		
+<body >
+
+    <header>		
 		<div class="iconMenu">
 			<img class="menuLogo" id="btnOpen" th:src="@{/Imagenes/menuLogo.png}">
 		</div>
@@ -62,28 +63,57 @@
 			
 	</div>
 
-	<div class="listViajes">
+	
+
+    <div>
 		<table>
 			<thead>
 		  	<tr>
 				<th scope="col">Id</th>
-				<th scope="col">Hora Inicio</th>
-				<th scope="col">Hora Fin</th>
+				<th scope="col">Placa</th>
+				<th scope="col">Numero interno</th>
 				<th scope="col">Acciones</th>
 		  	</tr>
 			</thead>
 			<tbody>
-		  		<tr th:each="viajes:${Viaje}">
-					<td th:text="${viajes.idViaje}"></td>
-					<td th:text="${viajes.horaInicio}"></td>
-					<td th:text="${viajes.horaFin}"></td>
-					<td>Editar</td>
+		  		<tr th:each="vehiculo : ${Vehiculos}">
+					<td th:text="${vehiculo.idVehiculo}"></td>
+					<td th:text="${vehiculo.placa}"></td>
+					<td th:text="${vehiculo.numeroInterno}"></td>
+					<td>
+                        <a th:href="@{/vistas/Vehiculos/edit/} + ${vehiculo.idVehiculo}" th:text="Editar" title="Editar Registro"></a>
+                        <a href="@{}">Eliminar</a>
+                    </td>
 		  		</tr>
 			</tbody>
 	  	</table>
 	</div>
-	
-	<script th:src="@{/js/scriptIndex.js}"></script>
+
+	<div class="btnRegistrarForm">
+		<button id="btnAbrirFormulario" th:onclick="|window.location.href='/vistas/Vehiculos/create'|">Registrar Vehículo</button>
+	</div>
+
+	<script>
+		//Ejecutar función en el evento click
+		document.getElementById("btnOpen").addEventListener("click",open_close_menu);
+
+		//declarar variables
+		var optionsMenu = document.getElementById("optionsMenu");
+		var btnOpen = document.getElementById("btnOpen");
+		var body = document.getElementById("body");
+			
+		//Evento para mostar y ocultar el menu
+		function open_close_menu(){
+			body.classList.toggle("body_move");
+			optionsMenu.classList.toggle("optionsMenu_move");
+		}
+		
+		const btnAbrirModal =
+		document.querySelector("#btnAbrirFormulario");
+		const btnCerrarModal = 
+		document.querySelector("#btnCerrarFormulario")
+	</script>
+
 </body>
 
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+		<form th:action="@{/vistas/Vehiculos/save}" th:object="${Vehiculos}" method="post">  
+			<div>
+				<label for="identificacion">Identificación:</label> <br>
+				<input type="text" id="identificacion" th:field="*{idVehiculo}" placeholder="Ingrese el Identificador"> 				
+			</div>
+			<div>
+				<label for="placa">Placa del Vehiculo:</label><br> 
+				<input type="text" id="placa" th:field="*{placa}" placeholder="Ingrese la placa"> 
+			</div>
+			<div>
+				<label for="numeroInterno">Numero Interno del Vehiculo:</label> <br>
+				<input type="text" id="numeroInterno" th:field="*{numeroInterno}" placeholder="Ingrese el numero Interno"> 
+			</div>
+			<div>
+				<input type="submit" value="Guardar" id="submit" name="submit"/>
+			</div>
+		</form>
+	</div>
+    
+</body>
+</html>
