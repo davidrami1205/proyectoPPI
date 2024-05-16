@@ -46,7 +46,7 @@ header {
 .cont-menu {
 	width: 100%;
 	max-width: 250px;
-	background: #719eb1;
+	background: black;
 	height: 100vh;
 	position: relative;
 	transition: all 500ms ease;
