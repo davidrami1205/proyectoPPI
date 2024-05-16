@@ -11,59 +11,31 @@
 <body >
 
     <header>		
-		<div class="iconMenu">
-			<img class="menuLogo" id="btnOpen" th:src="@{/Imagenes/menuLogo.png}">
+		<div class="iconMenu" id="iconMenu">
+			<input type="checkbox" id="checkboxIconMenu">
+			<label for="checkboxIconMenu">
+				<img class="menuLogo" id="btnOpen" th:src="@{/Imagenes/menuLogo.png}">
+			</label>
 		</div>
 	</header>
+
+	<div class="container-menu">
+		<div class="cont-menu">
+			<nav>
+				<a href="#">Programar</a>
+				<a href="#">Novedades</a>
+				<a href="#">Administracion</a>
+				<a href="#">Informes</a>
+			</nav>
+			<label for="" class="icon-equis">X</label>
+		</div>
+	</div>
 	
 	<div class="imagenEmpresa">
-	
+
 		<img class="logoEmpresa" th:src="@{/Imagenes/logoEmpresa.jpeg}">
-	
+		
 	</div>
-	
-	
-	<div class="optionsMenu" id="optionsMenu">
-		
-
-		<a th:href="@{/}">
-			<div class="option" id="selected">
-				<img class="programarLogo" th:src="@{/Imagenes/programarLogo.png}" title="Programar">
-				<h4>Programar</h4>
-			</div>
-		</a>
-		
-		<a th:href="@{/}">
-			<div class="option">
-				<img class="novedadLogo" th:src="@{/Imagenes/novedadLogo.png}" title="Novedades">
-				<h4>Novedades</h4>
-			</div>
-		</a>
-		
-		<a th:href="@{/vistas/Vehiculos/}">
-			<div class="option">
-				<img class="adminLogo" th:src="@{/Imagenes/adminLogo.png}" title="Administrar">
-				<h4>Administración</h4>
-			</div>
-		</a>
-		
-		<a th:href="@{/}">
-			<div class="informe">
-				<img class="informeLogo" th:src="@{/Imagenes/informeLogo.png}" title="Informes">
-				<h4>Informes</h4>
-			</div>
-		</a>
-			
-		<a th:href="@{/}">
-			<div class="user">
-				<img class="userLogo" th:src="@{/Imagenes/sesionLogo.png}" title="Perfil">
-				<h4>Perfil</h4>
-			</div>
-		</a>	
-			
-	</div>
-
-	
 
     <div>
 		<table>
@@ -82,37 +54,14 @@
 					<td th:text="${vehiculo.numeroInterno}"></td>
 					<td>
                         <a th:href="@{/vistas/Vehiculos/edit/} + ${vehiculo.idVehiculo}" th:text="Editar" title="Editar Registro"></a>
-                        <a href="@{}">Eliminar</a>
+                        <a th:href="@{/vistas/Vehiculos/delete/} + ${vehiculo.idVehiculo}" th:text="Eliminar" title="Eliminar Registro"></a>
                     </td>
 		  		</tr>
 			</tbody>
 	  	</table>
 	</div>
 
-	<div class="btnRegistrarForm">
-		<button id="btnAbrirFormulario" th:onclick="|window.location.href='/vistas/Vehiculos/create'|">Registrar Vehículo</button>
-	</div>
-
-	<script>
-		//Ejecutar función en el evento click
-		document.getElementById("btnOpen").addEventListener("click",open_close_menu);
-
-		//declarar variables
-		var optionsMenu = document.getElementById("optionsMenu");
-		var btnOpen = document.getElementById("btnOpen");
-		var body = document.getElementById("body");
-			
-		//Evento para mostar y ocultar el menu
-		function open_close_menu(){
-			body.classList.toggle("body_move");
-			optionsMenu.classList.toggle("optionsMenu_move");
-		}
-		
-		const btnAbrirModal =
-		document.querySelector("#btnAbrirFormulario");
-		const btnCerrarModal = 
-		document.querySelector("#btnCerrarFormulario")
-	</script>
+	<a th:href="@{/vistas/Vehiculos/create}"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
 
 </body>
 

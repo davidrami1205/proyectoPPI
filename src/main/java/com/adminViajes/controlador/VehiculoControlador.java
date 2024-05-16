@@ -57,12 +57,12 @@ public class VehiculoControlador {
 				return "redirect:/vistas/Vehiculos/";
 			}
 		} else {
-			return "redirect:/vistas/Vehiculos/registrarVehiculo";
+			return "redirect:/vistas/Vehiculos/";
 		}
 
 		modelo.addAttribute("Titulo", "Formulario: Editar Contacto");
 		modelo.addAttribute("Vehiculos", vehiculos);
-		return "/vistas/Vehiculos/registrarVehiculo";
+		return "/vistas/Vehiculos/registrarVehiculos";
 	}
 
 	@GetMapping("/delete/{id}")
@@ -71,7 +71,7 @@ public class VehiculoControlador {
 		Vehiculos vehiculos = new Vehiculos();
 
 		if (idVehiculo > 0) {
-			vehiculos = vehiculoServicio.buscarPorId(null);
+			vehiculos = vehiculoServicio.buscarPorId(idVehiculo);
 			if (vehiculos == null) {
 				return "redirect:/vistas/Vehiculos/";
 			}
