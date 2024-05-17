@@ -22,8 +22,8 @@ public class VehiculoControlador {
 
 	@GetMapping("/")
 	public String listadoVehiculos(Model modelo) {
-		List<Vehiculos> listadoVehiculos = vehiculoServicio.listaTodos();
-		modelo.addAttribute("Vehiculos", listadoVehiculos);
+		List<Vehiculos> Listavehiculos = vehiculoServicio.listaTodos();
+		modelo.addAttribute("Vehiculos", Listavehiculos);
 		return "/vistas/Vehiculos/vehiculos";
 	}
 
@@ -31,10 +31,9 @@ public class VehiculoControlador {
 	public String crear(Model modelo) {
 		// Crear el objeto
 		Vehiculos vehiculos = new Vehiculos();
-
-		modelo.addAttribute("Titulo", "Formulario Nuevo Contacto");
+		modelo.addAttribute("Titulo", "Formulario Nuevo Vehiculo");
 		modelo.addAttribute("Vehiculos", vehiculos);
-		return "/vistas/Vehiculos/registrarVehiculos";
+		return "/vistas/Vehiculos/registrarVehiculos :: form";
 	}
 
 	@PostMapping("/save")

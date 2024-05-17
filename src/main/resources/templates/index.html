@@ -7,61 +7,54 @@
 	<link rel="stylesheet" th:href="@{/css/estiloIndex.css}">
 </head>
 
-<body id="body">
+<body>
 	
 	<header>		
-		<div class="iconMenu">
-			<img class="menuLogo" id="btnOpen" th:src="@{/Imagenes/menuLogo.png}">
+		<div class="iconMenu" id="iconMenu">
+			<input type="checkbox" id="checkboxIconMenu">
+			<label for="checkboxIconMenu">
+				<img class="menuLogo" id="btnOpen" th:src="@{/Imagenes/menuLogo.png}">
+			</label>
 		</div>
 	</header>
-	
+
+	<div class="container-menu" id="menu">
+		<div class="cont-menu">
+			<nav>
+				<a th:href="@{/}">
+					<p class="txtProgram">Programar</p>
+					<img class="icon-program" th:src="@{/Imagenes/programarLogo.png}">
+				</a>
+				<a href="#">
+					<p class="txtNovedad">Novedades</p>
+					<img class="icon-novedad" th:src="@{/Imagenes/novedadLogo.png}">
+				</a>
+				<a href="#">
+					<p class="txtInforme">Informes</p>
+					<img class="icon-informe" th:src="@{/Imagenes/informeLogo.png}">
+				</a>
+				<div class="admin-link">
+					<p class="txtAdministracion">Administracion</p>
+					<img class="icon-administrar" th:src="@{/Imagenes/adminLogo.png}">
+					<ul class="admin-menu">
+						<li><a th:href="@{/vistas/Vehiculos/}">Vehiculos</a></li>
+						<li><a>Rutas</a></li>
+						<li><a>Conductores</a></li>
+						<li><a>Usuarios</a></li>
+					</ul>
+				</div>
+				
+			</nav>
+			<label for="checkboxIconMenu" class="icon-equis">X</label>
+		</div>
+	</div>
+
 	<div class="imagenEmpresa">
 	
 		<img class="logoEmpresa" th:src="@{/Imagenes/logoEmpresa.jpeg}">
 	
 	</div>
 	
-	
-	<div class="optionsMenu" id="optionsMenu">
-		
-
-		<a th:href="@{/}">
-			<div class="option" id="selected">
-				<img class="programarLogo" th:src="@{/Imagenes/programarLogo.png}" title="Programar">
-				<h4>Programar</h4>
-			</div>
-		</a>
-		
-		<a th:href="@{/}">
-			<div class="option">
-				<img class="novedadLogo" th:src="@{/Imagenes/novedadLogo.png}" title="Novedades">
-				<h4>Novedades</h4>
-			</div>
-		</a>
-		
-		<a th:href="@{/vistas/Vehiculos/}">
-			<div class="option">
-				<img class="adminLogo" th:src="@{/Imagenes/adminLogo.png}" title="Administrar">
-				<h4>Administración</h4>
-			</div>
-		</a>
-		
-		<a th:href="@{/}">
-			<div class="informe">
-				<img class="informeLogo" th:src="@{/Imagenes/informeLogo.png}" title="Informes">
-				<h4>Informes</h4>
-			</div>
-		</a>
-			
-		<a th:href="@{/}">
-			<div class="user">
-				<img class="userLogo" th:src="@{/Imagenes/sesionLogo.png}" title="Perfil">
-				<h4>Perfil</h4>
-			</div>
-		</a>	
-			
-	</div>
-
 	<div class="listViajes">
 		<table>
 			<thead>
@@ -83,7 +76,40 @@
 	  	</table>
 	</div>
 	
-	<script th:src="@{/js/scriptIndex.js}"></script>
+	<a href="#"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
+
+	<script>
+		/*CODIGO DE ANIMACION PARA OCULTAR LA BARRA LATERAL*/
+		document.addEventListener('DOMContentLoaded', function() {
+    	var checkboxIconMenu = document.getElementById('checkboxIconMenu');
+    	var menu = document.getElementById('menu');
+
+    		checkboxIconMenu.addEventListener('change', function() {
+    	    	if (checkboxIconMenu.checked) {
+    	        	menu.style.opacity = '1';
+    	        	menu.style.visibility = 'visible';
+    	    	} else {
+    	        	menu.style.opacity = '0';
+    	        	menu.style.visibility = 'hidden';
+    	    	}
+    		});
+		});
+		/*---------------------------------------------------*/
+
+		/*CODIGO PARA MOSTRAR LA LISTA DE ADMINISTRACION*/
+		document.addEventListener('DOMContentLoaded', function() {
+   			var adminLink = document.querySelector('.admin-link');
+
+    		// Agrega un evento de clic al contenedor .admin-link
+    		adminLink.addEventListener('click', function(event) {
+    		    var adminMenu = adminLink.querySelector('.admin-menu');
+			
+    		    // Cambia la visibilidad de .admin-menu al hacer clic en .admin-link
+    		    adminMenu.style.display = adminMenu.style.display === 'block' ? 'none' : 'block';
+    		});
+		});
+		/*-------------------------------------------------*/
+	</script>
 </body>
 
 </html>

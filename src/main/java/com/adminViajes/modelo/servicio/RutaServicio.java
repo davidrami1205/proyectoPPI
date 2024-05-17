@@ -3,10 +3,12 @@ package com.adminViajes.modelo.servicio;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.adminViajes.modelo.entidad.Ruta;
 import com.adminViajes.modelo.repositorio.RutaRepositorio;
 
+@Service
 public class RutaServicio implements IRutaService {
 
     @Autowired
@@ -23,8 +25,8 @@ public class RutaServicio implements IRutaService {
     }
 
     @Override
-    public void buscarId(Long id) {
-        rutaRepositorio.findById(id).orElse(null);
+    public Ruta buscarId(Long id) {
+        return rutaRepositorio.findById(id).orElse(null);
     }
 
     @Override

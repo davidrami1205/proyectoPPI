@@ -7,10 +7,9 @@
 </head>
 <body>
 
-    <div id="popup" class="popup">
-		<div>
+	<div>
 		<form th:action="@{/vistas/Vehiculos/save}" th:object="${Vehiculos}" method="post">  
-			<div id="popUpContent">
+			<div>
 				<label for="identificacion">Identificación:</label> <br>
 				<input type="text" id="identificacion" th:field="*{idVehiculo}" placeholder="Ingrese el Identificador"> 				
 			</div>
@@ -28,6 +27,6 @@
 			</div>
 		</form>
 	</div>
-    <script th:src="@{/js/scriptFormVehiculos.js}"></script>
+
 </body>
 </html>
