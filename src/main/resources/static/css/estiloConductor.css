@@ -1,0 +1,248 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: calibri;
+}
+
+body {
+	overflow-y: auto;
+}
+
+/*--------ICONO PARA MOSTRAR EL MENU------------*/
+header {
+	height:	50px;
+	background: white;
+	align-items: center;
+	position: fixed;
+	top: 0;
+}
+
+.iconMenu {
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3px;
+}
+
+.menuLogo {
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	position: absolute;
+}
+
+#checkboxIconMenu {
+	display: none;
+}
+
+/*-------------------------------------------------*/
+
+/*--------------------MENU LATERAL--------------------*/
+.container-menu {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	top: 0;left: 0;
+	/*transition: all 600ms ;*/
+	opacity: 0;
+	visibility: hidden;
+}
+
+/*--------------------ANIMACION PARA OCULTAR EL MENU LATERAL---------------------*/
+#checkboxIconMenu:checked ~ .container-menu {
+	opacity: 1;
+	visibility: visible;
+}
+/*--------------------------------------------------------------------------------*/
+.cont-menu {
+	width: 100%;
+	max-width: 250px;
+	background: #719eb1b6;
+	height: 100vh;
+	position: relative;
+	/*transition: all 500ms ease;*/
+	z-index: 900;
+}
+
+.cont-menu nav {
+	transform: translateY(15%);
+}
+
+.cont-menu nav a {
+	display: block;
+	text-decoration: none;
+	padding: 25px;
+	color: #04191e;
+	border-left: 5px solid transparent;
+	transition: all 500ms ease;
+	font-size: 18px;
+}
+
+.cont-menu nav div {
+	display: block;
+	text-decoration: none;
+	padding: 25px;
+	color: #04191e;
+	border-left: 5px solid transparent;
+	transition: all 500ms ease;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.cont-menu nav a:hover {
+	border-left: 5px solid white;
+	background: #cacacaad;
+}
+
+.cont-menu nav div:hover {
+	border-left: 5px solid white;
+	background: #cacacaad;
+}
+
+.cont-menu label {
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	padding-right: 8px;
+}
+
+/*-------------SECCIONES DE LA BARRA LATERAL--------------*/
+
+/*SECCION PROGRAMAR*/
+.txtProgram {
+	padding-left: 30px;
+}
+
+.icon-program {
+	height: 35px;
+	width: 35px;
+	position: absolute;
+	top: 18px;
+	left: 10px;
+}
+/*-----------------*/
+/*SECCION NOVEDADES*/
+.txtNovedad {
+	padding-left: 30px;
+}
+
+.icon-novedad {
+	height: 35px;
+	width: 35px;
+	position: absolute;
+	top: 88px;
+	left: 10px;
+}
+/*----------------*/
+/*SECCION INFORME*/
+.txtInforme {
+	padding-left: 30px;
+}
+
+.icon-informe {
+	height: 35px;
+	width: 35px;
+	position: absolute;
+	top: 158px;
+	left: 10px;
+}
+
+/*SECCION ADMINISTRACION*/
+.txtAdministracion {
+	padding-left: 30px;
+}
+
+.icon-administrar {
+	height: 35px;
+	width: 35px;
+	position: absolute;
+	top: 230px;
+	left: 10px;
+}
+/*LISTA DESPEGABLE DE ADMIN*/
+.admin-menu {
+	display: none;
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	background-color: #6993a5d8;
+	list-style: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+/*--------------------------*/
+
+/*---------------LOGO DE LA EMPRESA------------------*/
+
+.imagenEmpresa img {
+	position: absolute;
+  	left: 560px;
+  	top: 50px;
+  	width: 217px;
+  	height: 217px;
+}
+/*----------------------------------------------------*/
+
+/*------------BOTON AGREGAR---------------------------*/
+.btnRegistrarForm {
+    position: absolute;
+    right: 190px;
+    z-index: 800;
+    top: 35%;
+    background: #66bb6a;
+	border: 1px solid black;
+	border-radius: 8px;
+	outline: none;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: 600; 	
+	color: #04191e;
+    width: 150px;
+	height: 45px;
+}
+/*----------------------------------------------------*/
+
+/*--------------------TABLA DE DATOS----------------*/
+.table-container {
+    max-height: 70%; 
+    overflow-y: auto;
+}
+
+table {
+	border-collapse: collapse;
+	position: absolute;
+	top: 45%;
+	width: 96%;
+	margin-left: 25px;
+  }
+	
+  table th {
+	  border: 1px solid #000000; 
+	  padding: 10px; 
+	  text-align: center;
+	  background: #719eb1;
+	  font-size: 19px;
+  }
+  
+  table td {
+	  border: 1px solid #000000; 
+	  padding: 2px; 
+	  text-align: center;
+	  font-size: 17px;
+  }
+  /*------------------------------------------------*/
+
+.icon-editar {
+	width: 35px;
+	height: 35px;
+}
+
+.icon-eliminar {
+	width: 35px;
+	height: 35px;
+	padding-left: 10px;
+}

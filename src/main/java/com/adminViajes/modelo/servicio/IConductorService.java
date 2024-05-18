@@ -9,7 +9,7 @@ public interface IConductorService {
 
     public void save(Conductor conductor);
 
-    public void buscarId(Long id);
+    public Conductor buscarId(Long id);
 
     public void eliminar(Long id);
 }
