@@ -26,6 +26,9 @@ public class SecurityConfig {
         @Autowired
         UserDetailServiceImp userDetailServiceImp;
 
+        @Autowired
+        CustomLoginSuccessHandler customLoginSuccessHandler;
+
         @Bean
         AccessDeniedHandler accessDeniedHandler() {
                 return new CustomAccessDeniedHandler();
@@ -43,13 +46,14 @@ public class SecurityConfig {
                                                 .requestMatchers("/login", "/registrar", "/vistas/Usuario/api/users",
                                                                 "css/estiloLogin.css",
                                                                 "css/estiloRegistro.css", "Imagenes/**", "/api/users",
-                                                                "/vistas/registro")
+                                                                "/vistas/registro", "css/**")
                                                 .permitAll()
                                                 .anyRequest().authenticated())
                                 .formLogin(formLogin -> formLogin
                                                 .loginProcessingUrl("/signin")
                                                 .loginPage("/login")
-                                                .defaultSuccessUrl("/api", true)
+                                                .successHandler(customLoginSuccessHandler)
+                                                .defaultSuccessUrl("/home", true)
                                                 .usernameParameter("correo")
                                                 .passwordParameter("contrasena")
                                                 .permitAll())

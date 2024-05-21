@@ -33,7 +33,7 @@ public class VehiculoControlador {
 		Vehiculos vehiculos = new Vehiculos();
 		modelo.addAttribute("Titulo", "Formulario Nuevo Vehiculo");
 		modelo.addAttribute("Vehiculos", vehiculos);
-		return "/vistas/Vehiculos/registrarVehiculos :: form";
+		return "/vistas/Vehiculos/registrarVehiculos";
 	}
 
 	@PostMapping("/save")
@@ -59,7 +59,7 @@ public class VehiculoControlador {
 			return "redirect:/vistas/Vehiculos/";
 		}
 
-		modelo.addAttribute("Titulo", "Formulario: Editar Contacto");
+		modelo.addAttribute("Titulo", "Formulario: Editar Vehiculo");
 		modelo.addAttribute("Vehiculos", vehiculos);
 		return "/vistas/Vehiculos/registrarVehiculos";
 	}

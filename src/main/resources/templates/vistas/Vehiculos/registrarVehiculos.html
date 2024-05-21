@@ -3,32 +3,33 @@
 				xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-	<link rel="stylesheet" th:href="@{/css/estiloRegVehiculo.css}">
     <title>Automoviles Itagui</title>
+	<link rel="stylesheet" th:href="@{/css/estiloRegistrarVH.css}">
 </head>
+
 <body>
 
-	<div>
+	<div class="registrerF">
 		<form th:action="@{/vistas/Vehiculos/save}" th:object="${Vehiculos}" method="post">
 			
 			<div class="titleForm">
 				<h4>Registrar Vehiculo</h4>		
 			</div>
 
-			<div>
-				<label for="identificacion">Identificación:</label> <br>
-				<input type="text" id="identificacion" th:field="*{idVehiculo}" placeholder="Ingrese el Identificador"> 				
+			<div class="inputBox">
+				<input type="text" id="identificacion" th:field="*{idVehiculo}" placeholder="Identificador"> 				
 			</div>
-			<div>
-				<label for="placa">Placa del Vehiculo:</label><br> 
-				<input type="text" id="placa" th:field="*{placa}" placeholder="Ingrese la placa"> 
+			<div class="inputBox">
+				<input type="text" id="placa" th:field="*{placa}" placeholder="Placa"> 
 			</div>
-			<div>
-				<label for="numeroInterno">Numero Interno del Vehiculo:</label> <br>
-				<input type="text" id="numeroInterno" th:field="*{numeroInterno}" placeholder="Ingrese el numero Interno"> 
+			<div class="inputBox">
+				<input type="text" id="numeroInterno" th:field="*{numeroInterno}" placeholder="Numero Interno"> 
 			</div>
-			<div>
-				<input type="submit" value="Guardar" id="submit" name="submit"/>
+			<div >
+				<button type="submit" class="btn" >Guardar</button>
+				<a th:href="@{/vistas/Vehiculos/}" class="btnCancel">
+					<p>Cancelar</p>
+				</a>
 			</div>
 			</div>
 		</form>

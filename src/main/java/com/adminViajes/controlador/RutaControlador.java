@@ -32,7 +32,7 @@ public class RutaControlador {
     public String crear(Model modelo) {
         Ruta rutas = new Ruta();
         modelo.addAttribute("Titulo", "Formulario: Nuevo Vehiculo");
-        modelo.addAttribute("Rutas", rutas);
+        modelo.addAttribute("Ruta", rutas);
         return "/vistas/Ruta/registrarRuta";
     }
 
@@ -40,6 +40,7 @@ public class RutaControlador {
     public String guardar(@ModelAttribute Ruta ruta, Model modelo) {
         modelo.addAttribute("Titulo", "Formulario: Nuevo Vehiculo");
         modelo.addAttribute("Ruta", ruta);
+        rutaServicio.save(ruta);
         return "redirect:/vistas/Ruta/";
     }
 
@@ -51,13 +52,13 @@ public class RutaControlador {
         if (idRuta > 0) {
             rutas = rutaServicio.buscarId(idRuta);
             if (rutas == null) {
-                return "redirect:/vistas/Ruta";
+                return "redirect:/vistas/Ruta/";
             }
         } else {
-            return "redirect:/vistas/Ruta";
+            return "redirect:/vistas/Ruta/";
         }
 
-        modelo.addAttribute("Titulo", "Formulario: Editar Contacto");
+        modelo.addAttribute("Titulo", "Formulario: Editar Ruta");
         modelo.addAttribute("Ruta", rutas);
         return "/vistas/Ruta/registrarRuta";
     }

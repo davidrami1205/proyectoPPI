@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+				xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Automoviles Itagui</title>
+	<link rel="stylesheet" th:href="@{/css/estiloRegistrarRT.css}">
+</head>
+
+<body>
+
+	<div class="registrerF">
+		<form th:action="@{/vistas/Ruta/save}" th:object="${Ruta}" method="post">
+			
+			<div class="titleForm">
+				<h4>Registrar Ruta</h4>		
+			</div>
+
+			<div class="inputBox">
+				<input type="text" id="identificacion" th:field="*{idRuta}" placeholder="Identificador"> 				
+			</div>
+			<div class="inputBox">
+				<input type="text" id="codigo-ruta" th:field="*{codigoRuta}" placeholder="Codigo de Ruta"> 
+			</div>
+			<div class="inputBox">
+				<input type="text" id="nombre-ruta" th:field="*{nombreRuta}" placeholder="Nombre de la Ruta"> 
+			</div>
+			<div >
+				<button type="submit" class="btn" >Guardar</button>
+				<a th:href="@{/vistas/Ruta/}" class="btnCancel">
+					<p>Cancelar</p>
+				</a>
+			</div>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>
