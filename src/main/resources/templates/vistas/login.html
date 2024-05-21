@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
 
@@ -21,27 +22,25 @@
 	<div class="loginRegistrer">
 		<p>¿No tienes una cuenta?</p>
 		
-		<a th:href="@{/registrar}"><button type="submit" class="btnRegistrar" >Registrar</button></a>
+		<a th:href="@{/registrar}"><button type="button" class="btnRegistrar" >Registrar</button></a>
 	</div>
 	
 	<div class="loginF">
 		
-		<form method="post" th:action="@{/api/comprobar/{correo}/{contrasena}}" > 
+		<form method="post" th:action="@{/signin}" > 
 		
 			<div class="titleForm">
-				<h4>Iniciar Sesión</h4>				
+				<h4>Iniciar Sesión</h4>		
 			</div>
 		
 			<div class="inputBox">
 				<img th:src="@{/Imagenes/correoLogo.png}">
-				<input type="email" name="correo" required>
-				<label>Correo</label>	
+				<input type="email" id="correo" name="correo" required placeholder="Correo">	
 			</div>
 			
 			<div class="inputBox">
 				<img th:src="@{/Imagenes/contraseñaLogo.png}">
-				<input type="password" name= "contrasena" required>
-				<label>Contraseña</label>	
+				<input type="password" id="contrasena" name= "contrasena" required placeholder="Contraseña">
 			</div>
 			
 			<div class="recordarContraseña">

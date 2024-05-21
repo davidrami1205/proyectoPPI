@@ -9,9 +9,11 @@ public interface IUsuarioService {
 
 	public void save(Usuario usuario);
 
-	public Usuario buscarCorreo(String correo);
+	// public Usuario buscarCorreo(String correo);
 
-	public Usuario buscarContrasena(String contrasena);
+	// public Usuario buscarContrasena(String contrasena);
 
 	public void eliminar(Integer id);
+
+	public Usuario buscarId(Integer id);
 }

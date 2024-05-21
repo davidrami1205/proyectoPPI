@@ -148,3 +148,7 @@
 	left: 276px;
 	top: 420px;
 }
+
+input::placeholder {
+    color: black;
+}

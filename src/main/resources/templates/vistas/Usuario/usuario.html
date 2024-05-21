@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Automoviles Itagui</title>
@@ -20,7 +21,7 @@
 	<div class="container-menu" id="menu">
 		<div class="cont-menu">
 			<nav>
-				<a th:href="@{/}">
+				<a th:href="@{/api}">
 					<p class="txtProgram">Programar</p>
 					<img class="icon-program" th:src="@{/Imagenes/programarLogo.png}">
 				</a>
@@ -42,6 +43,11 @@
 						<li><a th:href="@{/vistas/Usuario/}">Usuarios</a></li>
 					</ul>
 				</div>
+				<form th:action="@{/logout}" method="post">
+					<button type="submit" class="btn-logout">
+						<p>Cerrar Sesion</p>
+					</button>
+				</form>
 				
 			</nav>
 			<label for="checkboxIconMenu" class="icon-equis">X</label>
@@ -66,7 +72,6 @@
                 <th scope="col">Tipo Documento</th>
                 <th scope="col">Numero Documento</th>
                 <th scope="col">Correo</th>
-                <th scope="col">Contraseña</th>
                 <th scope="col">Rol</th>
                 <th scope="col">Estado</th>
 				<th scope="col">Acciones</th>
@@ -82,7 +87,6 @@
                     <td th:text="${usuarios.tipoDocumento}"></td>
 					<td th:text="${usuarios.numeroDocumento}"></td>
                     <td th:text="${usuarios.correo}"></td>
-                    <td th:text="${usuarios.contrasena}"></td>
                     <td th:text="${usuarios.rol}"></td>
                     <td th:text="${usuarios.estado}"></td>
 					<td>

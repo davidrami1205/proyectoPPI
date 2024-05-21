@@ -230,4 +230,36 @@ table {
 	  font-size: 17px;
   }
   /*------------------------------------------------*/
+/*-----------------CERRAR SESION-------------------*/
+  .cont-menu nav form:hover {
+	border-left: 5px solid white;
+	background: #cacacaad;
+}
+
+  .btn-logout {
+	background-color: transparent;
+	border: none;
+	font-size: 18px;
+	width: 210px;
+	height: 60px;
+	cursor: pointer;
+	text-align: center;
+  }
+
+  .cont-menu nav form {
+	position: relative;
+	top: 230px;
+  }
   
+.cont-menu nav form {
+	display: block;
+	text-decoration: none;
+	padding: 0px;
+	color: #04191e;
+	border-left: 5px solid transparent;
+	transition: all 500ms ease;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+/*---------------------------------------------------*/

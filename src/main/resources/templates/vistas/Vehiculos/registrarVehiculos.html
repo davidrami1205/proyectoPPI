@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+				xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar</title>
+	<link rel="stylesheet" th:href="@{/css/estiloRegVehiculo.css}">
+    <title>Automoviles Itagui</title>
 </head>
 <body>
 
 	<div>
-		<form th:action="@{/vistas/Vehiculos/save}" th:object="${Vehiculos}" method="post">  
+		<form th:action="@{/vistas/Vehiculos/save}" th:object="${Vehiculos}" method="post">
+			
+			<div class="titleForm">
+				<h4>Registrar Vehiculo</h4>		
+			</div>
+
 			<div>
 				<label for="identificacion">Identificación:</label> <br>
 				<input type="text" id="identificacion" th:field="*{idVehiculo}" placeholder="Ingrese el Identificador"> 				
