@@ -4,46 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automoviles Itagui</title>
-    <link rel="stylesheet" th:href="@{/css/estiloRegistrarCN.css}">
+    <link rel="stylesheet" th:href="@{/css/estiloEditUser.css}">
 </head>
 <body>
-
+    
     <div class="registrerF">
-        <form th:action="@{/vistas/Conductor/save}" th:object="${Conductor}" method="post">
+        <form th:action="@{/vistas/Usuario/save}" th:object="${Usuario}" method="post">
 			
 			<div class="titleForm">
-				<h4>Registrar Conductor</h4>		
+				<h4>Editar Usuario</h4>		
 			</div>
 
-            <div class="inputBox3">
-				<input type="text" id="Identificador" th:field="*{idConductor}" placeholder="Identificador">
+			<div class="inputBox">
+				<input type="text" id="primer-nombre" th:field="*{primerNombre}" placeholder="Primer Nombre">
 			</div>
 			<div class="inputBox2">
 				<input type="text" id="segundo-nombre" th:field="*{segundoNombre}" placeholder="Segundo Nombre">
 			</div>
 			<div class="inputBox">
-				<input type="text" id="primer-nombre" th:field="*{primerNombre}" placeholder="Primer Nombre">
+				<input type="text" id="primer-apellido" th:field="*{primerApellido}" placeholder="Primer Apellido">
 			</div>
 			<div class="inputBox2">
 				<input type="text" id="segundo-apellido" th:field="*{segundoApellido}" placeholder="Segundo Apellido">
 			</div>
 			<div class="inputBox">
-				<input type="text" id="primer-apellido" th:field="*{primerApellido}" placeholder="Primer Apellido">
+				<input type="text" id="tipo-documento" th:field="*{tipoDocumento}" placeholder="Tipo Documento">
 			</div>
 			<div class="inputBox2">
 				<input type="text" id="numero-documento" th:field="*{numeroDocumento}" placeholder="Numero Documento">
 			</div>
 			<div class="inputBox">
-				<input type="text" id="tipo-documento" th:field="*{tipoDocumento}" placeholder="Tipo Documento">
-            </div>
-            <div >
+				<input type="text" id="correo" th:field="*{correo}" placeholder="Correo">
+			</div>
+			<div class="inputBox2">
+				<input type="text" id="contrasena" th:field="*{contrasena}" placeholder="Contraseña">
+			</div>
+			<div >
 				<button type="submit" class="btn" >Guardar</button>
-				<a th:href="@{/vistas/Conductor/}" class="btnCancel">
+				<a th:href="@{/vistas/Usuario/}" class="btnCancel">
 					<p>Cancelar</p>
 				</a>
 			</div>
 		</form>
     </div>
-    
+
 </body>
 </html>

@@ -90,12 +90,12 @@
                     <td th:text="${usuarios.rol}"></td>
                     <td th:text="${usuarios.estado}"></td>
 					<td>
-						<!--a th:href="@{/vistas/Conductor/edit/} + ${conductores.idConductor}" title="Editar Registro">
+						<a th:href="@{/vistas/Usuario/edit/} + ${usuarios.idUsuario}" title="Editar Registro">
 							<img class="icon-editar" th:src="@{/Imagenes/editarLogo.png}">
 						</a>
-                        <a th:href="@{/vistas/Conductor/delete/} + ${conductores.idConductor}" title="Eliminar Registro">
+                        <a th:href="@{/vistas/Usuario/delete/} + ${usuarios.idUsuario}" title="Eliminar Registro">
 							<img class="icon-eliminar" th:src="@{/Imagenes/eliminarLogo.png}">
-						</a-->
+						</a>
                     </td>
 		  		</tr>
 			</tbody>

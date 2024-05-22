@@ -15,12 +15,13 @@ public class ViajeServicio implements IViajeServicio {
     ViajeRepositorio viajeRepositorio;
 
     @Override
-    public List<Viaje> findAll() {
+    public List<Viaje> Listado() {
         return (List<Viaje>) viajeRepositorio.findAll();
     }
 
     @Override
     public void save(Viaje viaje) {
+        viaje.setEstado("ACTIVO");
         viajeRepositorio.save(viaje);
     }
 
@@ -30,8 +31,8 @@ public class ViajeServicio implements IViajeServicio {
     }
 
     @Override
-    public void buscarId(Long id) {
-        viajeRepositorio.findById(id).orElse(null);
+    public Viaje buscarId(Long id) {
+        return viajeRepositorio.findById(id).orElse(null);
     }
 
 }

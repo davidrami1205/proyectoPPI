@@ -69,24 +69,49 @@
 		<table>
 			<thead>
 		  	<tr>
-				<th scope="col">Id</th>
+				<th scope="col">Id Viaje</th>
+				<th scope="col">Vehiculo</th>
+				<th scope="col">Ruta</th>
+				<th scope="col">Primer Nombre</th>
+				<th scope="col">Primer Apellido</th>
 				<th scope="col">Hora Inicio</th>
 				<th scope="col">Hora Fin</th>
+				<th scope="col">Duracion</th>
 				<th scope="col">Acciones</th>
 		  	</tr>
 			</thead>
 			<tbody>
-		  		<tr th:each="viajes:${Viaje}">
+		  		<tr th:each="viajes : ${Viaje}">
 					<td th:text="${viajes.idViaje}"></td>
+					<td th:text="${viajes.vehiculos.NumeroInterno}"></td>
+					<td th:text="${viajes.ruta.nombreRuta}"></td>
+					<td th:text="${viajes.conductor.primerNombre}"></td>
+					<td th:text="${viajes.conductor.primerApellido}"></td>
 					<td th:text="${viajes.horaInicio}"></td>
 					<td th:text="${viajes.horaFin}"></td>
-					<td>Editar</td>
+					<td th:text="${viajes.duracion}"></td>
+					<td>
+						<!--a th:href="@{/vistas/Viaje/completarViaje/} + ${viajes.idViaje}" title="Completar Registro">
+							<img class="icon-completar" th:src="@{/Imagenes/completarLogo.png}">
+						</a-->
+						<form class="btnCompletar" th:action="@{vistas/Viaje/completarViaje/{id}(id=${viajes.idViaje})}" method="post">
+							<button class="compl" type="submit" title="Completar Registro">
+								<img class="icon-completar" th:src="@{/Imagenes/completarLogo.png}" />
+							</button>
+						</form>
+						<a th:href="@{/vistas/Viaje/edit/} + ${viajes.idViaje}" title="Editar Registro">
+							<img class="icon-editar" th:src="@{/Imagenes/editarLogo.png}">
+						</a>
+                        <a th:href="@{/vistas/Viaje/eliminar/} + ${viajes.idViaje}" title="Eliminar Registro">
+							<img class="icon-eliminar" th:src="@{/Imagenes/eliminarLogo.png}">
+						</a>
+					</td>
 		  		</tr>
 			</tbody>
 	  	</table>
 	</div>
 	
-	<a href="#"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
+	<a th:href="@{/vistas/Viaje/create}"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
 
 	<script>
 		/*CODIGO DE ANIMACION PARA OCULTAR LA BARRA LATERAL*/
@@ -119,6 +144,8 @@
     		});
 		});
 		/*-------------------------------------------------*/
+
+		
 	</script>
 </body>
 

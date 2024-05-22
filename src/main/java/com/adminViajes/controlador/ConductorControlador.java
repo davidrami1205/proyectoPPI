@@ -40,6 +40,7 @@ public class ConductorControlador {
     public String guardar(@ModelAttribute Conductor conductores, Model modelo) {
         modelo.addAttribute("Titulo:", "Formulario: Nuevo Conductor:");
         modelo.addAttribute("Conductor", conductores);
+        conductorServicio.save(conductores);
         return "redirect:/vistas/Conductor/";
     }
 
@@ -77,7 +78,7 @@ public class ConductorControlador {
         }
 
         conductorServicio.eliminar(idConductor);
-        return "/vistas/Conductor/registrarConductor";
+        return "redirect:/vistas/Conductor/";
     }
 
 }

@@ -1,6 +1,8 @@
 package com.adminViajes.modelo.entidad;
 
 import java.sql.Time;
+import java.time.LocalDateTime;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import net.sf.jsqlparser.expression.DateTimeLiteralExpression.DateTime;
+//import net.sf.jsqlparser.expression.DateTimeLiteralExpression.DateTime;
 
 @Entity
 @Table(name = "viaje")
@@ -18,11 +20,13 @@ public class Viaje {
 	@Column(name = "idViaje")
 	private Long idViaje;
 	@Column(name = "horaInicio")
-	private DateTime horaInicio;
+	private LocalDateTime horaInicio;
 	@Column(name = "horaFin")
-	private DateTime horaFin;
+	private LocalDateTime horaFin;
 	@Column(name = "duracion")
 	private Time duracion;
+	@Column(name = "estado")
+	private String estado;
 	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
 			CascadeType.DETACH, CascadeType.REFRESH })
 	@JoinColumn(name = "idVehiculo")
@@ -52,19 +56,19 @@ public class Viaje {
 		this.idViaje = idViaje;
 	}
 
-	public DateTime getHoraInicio() {
+	public LocalDateTime getHoraInicio() {
 		return horaInicio;
 	}
 
-	public void setHoraInicio(DateTime horaInicio) {
+	public void setHoraInicio(LocalDateTime horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 
-	public DateTime getHoraFin() {
+	public LocalDateTime getHoraFin() {
 		return horaFin;
 	}
 
-	public void setHoraFin(DateTime horaFin) {
+	public void setHoraFin(LocalDateTime horaFin) {
 		this.horaFin = horaFin;
 	}
 
@@ -98,6 +102,22 @@ public class Viaje {
 
 	public void setConductor(Conductor conductor) {
 		this.conductor = conductor;
+	}
+
+	public Ruta getRuta() {
+		return ruta;
+	}
+
+	public void setRuta(Ruta ruta) {
+		this.ruta = ruta;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 }

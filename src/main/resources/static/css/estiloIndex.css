@@ -209,7 +209,7 @@ header {
 /*--------------------TABLA DE DATOS----------------*/
 table {
 	border-collapse: collapse;
-	position: fixed;
+	position: absolute;
 	top: 45%;
 	width: 96%;
 	margin-left: 23px;  
@@ -263,4 +263,31 @@ table {
 }
 
 /*---------------------------------------------------*/
+.icon-editar {
+	width: 35px;
+	height: 35px;
+}
 
+.icon-eliminar {
+	width: 35px;
+	height: 35px;
+	padding-left: 10px;
+}
+
+.icon-completar {
+	width: 33px;
+	height: 33px;
+	padding-right: 15px;
+}
+
+.btnCompletar {
+	display: inline;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+.compl {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
